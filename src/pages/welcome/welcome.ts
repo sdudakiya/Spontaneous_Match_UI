@@ -1,3 +1,4 @@
+import { Api } from './../../providers/api/api';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
@@ -14,7 +15,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public api: Api) { }
 
   login() {
     this.navCtrl.push('LoginPage');
@@ -23,4 +24,12 @@ export class WelcomePage {
   signup() {
     this.navCtrl.push('SignupPage');
   }
+
+  gotoFB(){
+    this.api.validateLogin();
+  }
+
+  takeScreenshot() {}
+
+  gotoTwitter() {}
 }

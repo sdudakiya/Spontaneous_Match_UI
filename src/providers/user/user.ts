@@ -26,6 +26,8 @@ import { Api } from '../api/api';
 @Injectable()
 export class User {
   _user: any;
+  private KEY: string = '204b4fa8aee15f497fcf2ee8';
+  private API_END_POINT: string = 'generate_auth_cookie';
 
   constructor(public api: Api) { }
 
@@ -34,7 +36,7 @@ export class User {
    * the user entered on the form.
    */
   login(accountInfo: any) {
-    let seq = this.api.post('login', accountInfo).share();
+    let seq = this.api.post( this.API_END_POINT, accountInfo).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in

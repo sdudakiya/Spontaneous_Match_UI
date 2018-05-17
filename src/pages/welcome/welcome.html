@@ -1,13 +1,44 @@
-<ion-content scroll="false">
-  <div class="splash-bg"></div>
-  <div class="splash-info">
-    <div class="splash-logo"></div>
-    <div class="splash-intro">
-      {{ 'WELCOME_INTRO' | translate }}
-    </div>
-  </div>
-  <div padding>
-    <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
-    <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
-  </div>
+<ion-content scroll="false" class="background">
+  <h2>Spontaneous Match</h2> 
+  <ion-card>
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <p>Forgot Password ? <a>Get Your password</a></p>
+        </ion-item>
+        <button ion-button outline block color="danger" (click)="login()">Login</button>
+      </ion-list>
+      <b>OR</b>
+      <button ion-button outline block color="danger">Sign Up</button>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left block ion-button (click)="gotoFB()">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <div>login with facebook</div>
+      </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left color="danger" block ion-button (click)="takeScreenshot()">
+        <ion-icon name="logo-google"></ion-icon>
+        <div>Screenshots</div>
+      </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left color="danger" block ion-button (click)="gotoTwitter()">
+        <ion-icon name="logo-google"></ion-icon>
+        <div>Login with Twitter</div>
+      </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
